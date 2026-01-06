@@ -96,7 +96,7 @@ The dashboard will prioritize narrative flow and interpretability over exhaustiv
 ---
 
 ## Project Structure
-
+```
 MusicPlatformInsights/
 ├── notebooks/
 ├── data/
@@ -107,7 +107,7 @@ MusicPlatformInsights/
 │ ├── canonical_schema.md
 │ ├── kpi_definitions.md
 ├── README.md
-
+```
 
 ---
 
