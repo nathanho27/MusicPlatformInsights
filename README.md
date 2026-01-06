@@ -1,6 +1,6 @@
 # MusicPlatformInsights
 
-Cross-platform analysis of personal music listening behavior, focusing on engagement, habits, and preferences using normalized Spotify and Apple Music data and Power BI visualization.
+Cross-platform analysis of personal music listening behavior, integrating Spotify and Apple Music data to model engagement patterns, habit consistency, preference diversity, and discovery dynamics through interpretable KPIs and Power BI visualization.
 
 ---
 
