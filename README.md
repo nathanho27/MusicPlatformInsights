@@ -99,6 +99,8 @@ The dashboard will prioritize narrative flow and interpretability over exhaustiv
 ```
 MusicPlatformInsights/
 ├── notebooks/
+│ ├── LoadSpotifyData.ipynb
+│ ├── LoadAppleData.ipynb
 ├── data/
 │ ├── raw/
 │ ├── processed/
@@ -128,5 +130,3 @@ Work will proceed incrementally with an emphasis on correctness, clarity, and po
 ## Why This Project
 
 While centered on personal music data, this project mirrors real-world analytics problems such as multi-source data integration, behavioral modeling, KPI design, and insight communication. The focus is on transforming raw event data into meaningful, user-facing insights, reflecting how modern consumer products use analytics to understand and communicate user behavior.
-
-
