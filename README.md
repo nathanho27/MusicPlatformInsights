@@ -12,7 +12,7 @@ Cross-platform analysis of personal music listening behavior, summarizing year-l
 
 ## Overview
 
-MusicPlatformInsights is a user behavior analytics project that studies how individuals engage with music over time across multiple streaming platforms. Rather than treating listening activity as a collection of isolated plays, the project frames music consumption as a **behavioral pattern problem**, focusing on consistency, preference formation, and exploration dynamics over a full year.
+MusicPlatformInsights is a user behavior analytics project that studies how individuals engage with music over time across multiple streaming platforms. Rather than treating listening activity as a collection of isolated plays, the project frames music consumption as a **behavioral pattern problem**, focusing on consistency, preference formation, and exploration dynamics over the course of a full year.
 
 The project integrates and normalizes listening history from Spotify and Apple Music into a unified event-level schema. Platform-agnostic KPIs are then derived to summarize engagement intensity, habit stability, and preference diversity. Results are presented through a narrative-style Power BI dashboard inspired by consumer product analytics rather than traditional BI reporting.
 
@@ -25,7 +25,7 @@ The primary goals of the project are to:
 - Summarize year-long listening behavior in a compact, interpretable format  
 - Identify meaningful engagement patterns beyond simple top-N rankings  
 - Compare listening habits across platforms within a unified behavioral model  
-- Translate raw event data into insights a non-technical user would understand  
+- Translate raw event data into insights that a non-technical user would understand  
 
 The emphasis is on **interpretability and storytelling**, not algorithmic complexity.
 
@@ -148,7 +148,7 @@ Planned next steps include:
 - Publishing the initial Power BI year-in-review dashboard  
 - Optionally adding a lightweight web presentation layer  
 
-Work will be completed iteratively with an emphasis on clarity and polish rather than feature breadth.
+Work will be completed iteratively, with an emphasis on clarity and polish rather than breadth of features.
 
 ---
 
