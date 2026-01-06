@@ -1,6 +1,6 @@
 # MusicPlatformInsights
 
-Cross-platform analysis of personal music listening behavior, summarizing year-long engagement, preferences, and habits using normalized Spotify and Apple Music data and Power BI visualization.
+Cross-platform analysis of personal music listening behavior, focusing on engagement, habits, and preferences using normalized Spotify and Apple Music data and Power BI visualization.
 
 ---
 
@@ -8,117 +8,90 @@ Cross-platform analysis of personal music listening behavior, summarizing year-l
 
 ## In Progress
 
+Data access pending. Project structure, schema design, and KPI definitions initialized.
+
 ---
 
 ## Overview
 
-MusicPlatformInsights is a user behavior analytics project that studies how individuals engage with music over time across multiple streaming platforms. Rather than treating listening activity as a collection of isolated plays, the project frames music consumption as a **behavioral pattern problem**, focusing on consistency, preference formation, and exploration dynamics over the course of a full year.
+MusicPlatformInsights is a user behavior analytics project that studies how individuals engage with music over time across multiple streaming platforms. Rather than treating listening activity as a collection of isolated plays, the project frames music consumption as a **behavioral pattern problem**, emphasizing consistency, preference formation, and discovery dynamics.
 
-The project integrates and normalizes listening history from Spotify and Apple Music into a unified event-level schema. Platform-agnostic KPIs are then derived to summarize engagement intensity, habit stability, and preference diversity. Results are presented through a narrative-style Power BI dashboard inspired by consumer product analytics rather than traditional BI reporting.
+The project is designed to integrate and normalize listening history from Spotify and Apple Music into a unified, platform-agnostic event model. From this foundation, a set of interpretable KPIs is derived to summarize engagement intensity, listening habits, and preference diversity. Insights are ultimately delivered through a narrative-style Power BI dashboard inspired by consumer product analytics rather than traditional BI reporting.
 
 ---
 
 ## Analytical Objectives
 
-The primary goals of the project are to:
+The primary objectives of the project are to:
 
-- Summarize year-long listening behavior in a compact, interpretable format  
-- Identify meaningful engagement patterns beyond simple top-N rankings  
-- Compare listening habits across platforms within a unified behavioral model  
-- Translate raw event data into insights that a non-technical user would understand  
+- Summarize individual-level listening behavior over the available analysis window  
+- Identify meaningful engagement patterns beyond simple top-N summaries  
+- Compare listening habits across platforms within a unified behavioral framework  
+- Translate raw event data into insights that are intuitive and user-facing  
 
-The emphasis is on **interpretability and storytelling**, not algorithmic complexity.
+The emphasis is on **clarity, interpretability, and storytelling**, not algorithmic complexity.
 
 ---
 
-## Behavioral Dimensions
+## Canonical Listening Event Model
 
-Listening behavior is analyzed across several core dimensions.
+All listening data is mapped into a standardized event-level schema to support platform-agnostic analysis.
 
-### Engagement Intensity
+Each row represents a single listening event and includes:
 
-Measures how much and how often music is consumed.
+- `event_time`: Timestamp of the listening event  
+- `platform`: Source platform (spotify, apple_music)  
+- `artist`: Artist name  
+- `track`: Track name  
+- `duration_minutes`: Minutes listened during the event  
+- `session_id`: Derived identifier grouping events into listening sessions  
 
-- Total minutes listened  
-- Active listening days and weeks  
-- Average session duration  
-- Longest listening streaks  
+This schema is intentionally minimal and designed to support behavioral analysis rather than perfect metadata reconciliation.
 
-### Consistency & Habits
+---
 
-Captures how regular or sporadic listening behavior is.
+## KPI Definitions
 
-- Week-to-week activity stability  
-- Time-of-day listening patterns  
-- Weekday vs weekend behavior  
-- Session frequency distributions  
+KPIs are defined conceptually prior to data ingestion and derived exclusively from normalized listening events.
 
-### Preferences
+Core metrics include:
 
-Summarizes what the user listens to and how concentrated tastes are.
+- **Total Listening Time**: Sum of minutes listened over the analysis window  
+- **Active Day**: Any calendar day with at least one listening event  
+- **Active Week**: Any calendar week with at least one listening event  
+- **Listening Session**: A sequence of events separated by no more than a fixed inactivity threshold  
+- **Session Length**: Total listening time within a session  
+- **Discovery Event**: First-time listen to an artist  
+- **Repeat Listening Rate**: Share of listening attributed to previously encountered artists  
 
-- Top artists, tracks, and genres  
-- Artist loyalty vs breadth  
-- Genre diversity and entropy-style measures  
-- Long-term preference persistence  
-
-### Discovery vs Repeat Behavior
-
-Separates exploration from habitual listening.
-
-- New artist discovery rate  
-- Repeat listening concentration  
-- Platform-level discovery differences  
+Definitions are designed to remain stable across platforms.
 
 ---
 
 ## Data Sources
 
-- **Spotify Listening History**: User-level streaming events with timestamps and track metadata  
-- **Apple Music Listening History**: User-level play data exported from Apple Music  
+Planned data sources include:
 
-Both sources are treated as raw inputs and transformed into a standardized listening event table to support platform-agnostic analysis.
+- **Spotify Listening History**: Exported user-level streaming events with timestamps and playback duration  
+- **Apple Music Listening History**: User-level play activity exported via Apple Media Services  
 
----
-
-## Data Modeling & Normalization
-
-Spotify and Apple Music differ in schema, timestamp conventions, and metadata availability. To address this, all data is mapped into a **canonical listening event model** with consistent definitions for:
-
-- Listening duration  
-- Artist and track identifiers  
-- Session boundaries  
-- Platform attribution  
-
-Normalization decisions are documented and prioritized for analytical consistency rather than perfect metadata reconciliation.
-
----
-
-## KPI Construction
-
-KPIs are derived exclusively from normalized listening events and are designed to be:
-
-- Platform-independent  
-- Intuitive to interpret  
-- Stable across time  
-
-Metrics are aggregated at daily, weekly, and annual levels to support both summary views and behavioral trend analysis.
+Both sources will be treated as raw inputs and transformed into the canonical listening event model prior to analysis.
 
 ---
 
 ## Visualization
 
-Insights are delivered through a **Power BI dashboard** designed as a year-in-review experience rather than a traditional operational report.
+Insights will be delivered through a **Power BI dashboard** designed as a year-in-review style experience rather than an operational report.
 
-Dashboard views include:
+Planned dashboard views include:
 
-- High-level annual listening summary  
-- Engagement and consistency breakdowns  
+- High-level listening summary  
+- Engagement and habit consistency breakdowns  
 - Preference concentration and diversity views  
-- Platform comparison insights  
-- Behavioral trend timelines  
+- Discovery versus repeat listening behavior  
+- Cross-platform comparison insights  
 
-The dashboard prioritizes narrative flow and interpretability over exhaustive filtering.
+The dashboard will prioritize narrative flow and interpretability over exhaustive filtering.
 
 ---
 
@@ -126,13 +99,13 @@ The dashboard prioritizes narrative flow and interpretability over exhaustive fi
 
 MusicPlatformInsights/
 ├── notebooks/
-│ ├── 01_data_normalization.ipynb
-│ ├── 02_kpi_construction.ipynb
-│ ├── 03_behavioral_analysis.ipynb
 ├── data/
 │ ├── raw/
 │ ├── processed/
 ├── dashboards/
+├── docs/
+│ ├── canonical_schema.md
+│ ├── kpi_definitions.md
 ├── README.md
 
 
@@ -140,19 +113,20 @@ MusicPlatformInsights/
 
 ## Planned Work
 
-Planned next steps include:
+Next steps include:
 
-- Finalizing Spotify-first ingestion and normalization  
+- Ingesting and cleaning Spotify listening history  
+- Validating the canonical schema against real event data  
 - Adding Apple Music as a secondary data source  
-- Completing KPI definitions and validation  
-- Publishing the initial Power BI year-in-review dashboard  
-- Optionally adding a lightweight web presentation layer  
+- Implementing KPI calculations and aggregation logic  
+- Publishing the initial Power BI dashboard  
 
-Work will be completed iteratively, with an emphasis on clarity and polish rather than breadth of features.
+Work will proceed incrementally with an emphasis on correctness, clarity, and polish.
 
 ---
 
 ## Why This Project
 
-While centered on personal music data, this project mirrors real-world analytics problems such as multi-source data integration, behavioral modeling, KPI design, and insight communication. The focus is on transforming raw event data into meaningful, user-facing insights, reflecting how modern consumer products use analytics to tell compelling stories.
+While centered on personal music data, this project mirrors real-world analytics problems such as multi-source data integration, behavioral modeling, KPI design, and insight communication. The focus is on transforming raw event data into meaningful, user-facing insights, reflecting how modern consumer products use analytics to understand and communicate user behavior.
+
 
