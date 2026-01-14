@@ -8,7 +8,7 @@ Cross-platform analysis of personal music listening behavior, integrating Spotif
 
 ## In Progress
 
-Data access pending. Project structure, schema design, and KPI definitions initialized.
+Data has been accessed. Project structure, schema design, and KPI definitions initialized.
 
 ---
 
@@ -70,7 +70,7 @@ Definitions are designed to remain stable across platforms.
 
 ## Data Sources
 
-Planned data sources include:
+Data sources include:
 
 - **Spotify Listening History**: Exported user-level streaming events with timestamps and playback duration  
 - **Apple Music Listening History**: User-level play activity exported via Apple Media Services  
