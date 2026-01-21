@@ -143,6 +143,7 @@ MusicPlatformInsights/
 │ ├── LoadAppleData.ipynb
 │ ├── AddAppleArtists.ipynb
 │ ├── EngagementKPIs.ipynb
+│ ├── ExportToPowerBI.ipynb
 ├── data/
 │ ├── raw/
 │ ├── processed/
