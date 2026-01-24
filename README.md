@@ -2,7 +2,7 @@
 
 ## Cross-Platform Music Listening Behavior Analysis
 
-Cross-platform analysis of personal music listening behavior, integrating Spotify and Apple Music data into a unified event-level model to study engagement patterns, habit consistency, preference diversity, and discovery behavior through interpretable KPIs and Power BI dashboards.
+Cross-platform analysis of personal music listening behavior, integrating Spotify and Apple Music data into a unified event-level model to study engagement patterns, habit consistency, preference diversity, and discovery behavior through interpretable KPIs and Tableau dashboards.
 
 ---
 
@@ -24,7 +24,7 @@ Cross-platform analysis of personal music listening behavior, integrating Spotif
 
 **In Progress**
 
-Spotify and Apple Music listening history has been ingested, normalized into a canonical event schema, sessionized, and stored in a unified SQLite database. Apple Music artist metadata has been partially enriched using library data. Core behavioral KPIs have been implemented and exported for dashboarding. Power BI dashboard development is in progress.
+Spotify and Apple Music listening history has been ingested, normalized into a canonical event schema, sessionized, and stored in a unified SQLite database. Apple Music artist metadata has been partially enriched using library data. Core behavioral KPIs have been implemented and exported for dashboarding. Tableau dashboard development is in progress.
 
 ---
 
@@ -34,7 +34,7 @@ MusicPlatformInsights is a user behavior analytics project that studies how indi
 
 Listening history from Spotify and Apple Music is ingested from raw user exports, normalized into a shared event-level schema, and stored in a single SQLite database. From this foundation, a set of interpretable, behavior-focused KPIs is derived to summarize engagement intensity, habit consistency, preference diversity, and discovery dynamics.
 
-Insights are delivered through a narrative-style Power BI dashboard inspired by consumer product analytics rather than traditional BI reporting.
+Insights are delivered through a narrative-style Tableau dashboard inspired by consumer product analytics rather than traditional BI reporting.
 
 ---
 
@@ -131,7 +131,7 @@ All normalized listening events are stored in a single SQLite database:
 
 Spotify events initialize the table. Apple Music events are appended after enrichment, replacing prior Apple rows to avoid duplication.
 
-Derived KPI tables are exported as CSVs for use in Power BI.
+Derived KPI tables are exported as CSVs for use in Tableau.
 
 ---
 
@@ -177,7 +177,7 @@ MusicPlatformInsights/
 
 ## Planned Work
 
-- Finalize Power BI dashboard layout and storytelling flow  
+- Finalize Tableau dashboard layout and storytelling flow  
 - Refine cross-platform comparison insights  
 - Add optional v2 Apple Music metadata enrichment  
 - Document KPI rationale for interview and portfolio use  
