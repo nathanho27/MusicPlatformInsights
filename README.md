@@ -2,39 +2,41 @@
 
 ## Cross-Platform Music Listening Behavior Analysis
 
-Cross-platform analysis of personal music listening behavior, integrating Spotify and Apple Music data into a unified event-level model to study engagement patterns, habit consistency, preference diversity, and discovery behavior through interpretable KPIs and Tableau dashboards.
+## Introduction
+
+In this project, I used Python, SQLite, and Tableau to analyze my personal music listening behavior across Spotify and Apple Music. The goal was to move beyond basic “top artists” summaries and instead understand how my listening habits changed over time, especially before and after switching platforms.
+
+By modeling listening activity at the event and session level, this project focuses on engagement patterns such as listening volume, session behavior, repeat listening, and preference concentration. The dashboard is designed to feel more like a year-in-review experience than a traditional BI report, emphasizing clarity, storytelling, and interpretability.
+
+This project mirrors real-world analytics problems like multi-source data integration, KPI design, and translating raw behavioral data into insights that are easy to understand and communicate.
+	•	The published Tableau dashboard can be found [here](https://public.tableau.com/app/profile/nathan.ho2158/viz/MusicWrapped/MusicWrapped)
+
+Preview of Dashboard here:
+[![Dashboard Preview](images/MusicWrapped.png)](https://public.tableau.com/app/profile/nathan.ho2158/viz/MusicWrapped/MusicWrapped)
 
 ---
 
 ## Table of Contents
-- [Status](#status)
 - [Overview](#overview)
 - [Analytical Objectives](#analytical-objectives)
 - [Canonical Listening Event Model](#canonical-listening-event-model)
 - [Data Ingestion & Normalization](#data-ingestion--normalization)
+- [Key Insights & Analysis](#key-insights--analysis)
 - [Engagement KPIs](#engagement-kpis)
 - [Data Storage](#data-storage)
 - [Visualization](#visualization)
 - [Project Structure](#project-structure)
-- [Planned Work](#planned-work)
-
----
-
-## Status
-
-**In Progress**
-
-Spotify and Apple Music listening history has been ingested, normalized into a canonical event schema, sessionized, and stored in a unified SQLite database. Apple Music artist metadata has been partially enriched using library data. Core behavioral KPIs have been implemented and exported for dashboarding. Tableau dashboard development is in progress.
+- [Why This Project](#why-this-project)
 
 ---
 
 ## Overview
 
-MusicPlatformInsights is a user behavior analytics project that studies how individuals engage with music over time across multiple streaming platforms. Rather than treating listening activity as a collection of isolated plays, the project frames music consumption as a **behavioral pattern problem**, emphasizing listening habits, session behavior, and preference formation.
+MusicPlatformInsights is a user behavior analytics project that explores how listening habits change over time across streaming platforms. Instead of treating music activity as a series of isolated plays, the project frames listening as a behavioral pattern problem, focusing on session behavior, habit formation, and preference concentration.
 
-Listening history from Spotify and Apple Music is ingested from raw user exports, normalized into a shared event-level schema, and stored in a single SQLite database. From this foundation, a set of interpretable, behavior-focused KPIs is derived to summarize engagement intensity, habit consistency, preference diversity, and discovery dynamics.
+Listening history from Spotify and Apple Music is ingested from raw user exports, normalized into a shared event-level schema, and stored in a unified SQLite database. From this foundation, a set of interpretable, behavior-focused KPIs is derived to capture engagement intensity, session dynamics, preference diversity, and discovery behavior.
 
-Insights are delivered through a narrative-style Tableau dashboard inspired by consumer product analytics rather than traditional BI reporting.
+Insights are presented through a narrative-style Tableau dashboard inspired by consumer product analytics, emphasizing clarity, storytelling, and how users actually experience music over time.
 
 ---
 
@@ -91,34 +93,72 @@ Due to Apple Music data limitations, some events (e.g. radio, autoplay, editoria
 
 ---
 
+## Key Insights & Analysis
+
+### 1. Cross-Platform Listening Overview
+
+![Music Wrapped Dashboard](images/MusicWrapped.png)
+
+This dashboard provides a consolidated view of my listening behavior across Spotify and Apple Music after normalizing both platforms into a shared event-level schema. Rather than focusing on individual songs or artists in isolation, the dashboard highlights how overall engagement, session behavior, and listening structure change across platforms.
+
+The goal is to understand *how* I listen, not just *what* I listen to.
+
+---
+
+### 2. Listening Time Shift by Platform
+
+![Listening Time by Platform](images/ListeningTime.png)
+
+After switching from Spotify to Apple Music, total listening time increased noticeably, particularly in the months following the platform switch. Listening volume became less evenly distributed, with clearer peaks rather than steady background usage.
+
+This pattern suggests a shift away from passive listening toward more intentional, high-engagement listening periods.
+
+---
+
+### 3. Session Behavior and Engagement
+
+![Session Length](images/SessionLength.png)
+
+Session-level metrics indicate that listening sessions on Apple Music tend to be longer on average than those on Spotify. While overall session frequency declined, individual sessions lasted longer, pointing to fewer but more sustained listening periods.
+
+This behavior aligns with more deliberate engagement rather than frequent, short interactions.
+
+---
+
+### 4. Artist Concentration
+
+![Top Artists](images/TopArtists.png)
+
+Listening time became more concentrated among a smaller set of artists after the platform switch. A handful of artists account for a larger share of total listening minutes, indicating increased replay behavior rather than broad exploration.
+
+This reflects deeper engagement with familiar artists rather than continuous discovery.
+
+---
+
+### 5. Track-Level Replay Behavior
+
+![Top Tracks](images/TopTracks.png)
+
+A similar concentration pattern appears at the track level. Post-switch listening shows heavier replay of specific songs, with fewer tracks accounting for a disproportionate share of total listening time.
+
+Together with artist concentration, this suggests a shift toward focused listening habits built around favorites.
+
+---
+
 ## Engagement KPIs
 
-Behavioral KPIs are derived exclusively from the normalized event table and computed at appropriate levels of aggregation before export for visualization.
+The dashboard insights are supported by a set of interpretable, behavior-focused KPIs derived from the normalized listening event table. These metrics are designed to capture *how listening happens*, not just *what is listened to*.
 
-Implemented metrics include:
+### Total Listening Minutes
+Measures overall engagement volume across platforms and provides baseline context for changes in listening behavior over time.
 
-### Listening Intensity
-- Total listening time by platform  
-- Daily listening minutes  
+### Session Depth
+Represents the average number of listening events per session. Higher values indicate longer, more continuous listening periods, while lower values suggest fragmented or background listening behavior.
 
-### Habit Consistency
-- Active listening days  
-- Active listening weeks  
+### Average Listen Duration
+Captures the average time spent per listening event, helping distinguish between brief skips and sustained engagement.
 
-### Session Behavior
-- Session length (minutes)  
-- Tracks per session  
-- Average and median session duration  
-
-### Preference Diversity
-- Unique tracks per day  
-- Unique artists per week  
-
-### Discovery Behavior
-- Discovery events (first listen to an artist)  
-- Discovery rate by platform  
-
-Deduplication is applied intentionally at the KPI level rather than globally.
+Together, these KPIs reinforce the core finding of the project: after switching platforms, listening behavior shifted toward fewer sessions, longer engagement periods, and more focused replay patterns.
 
 ---
 
@@ -137,18 +177,9 @@ Derived KPI tables are exported as CSVs for use in Tableau.
 
 ## Visualization
 
-Insights are delivered through a **Power BI dashboard** designed as a year-in-review style experience rather than an operational report.
+Insights are delivered through a **Tableau dashboard** designed as a year-in-review style experience rather than an operational BI report.
 
-Planned dashboard views include:
-
-- High-level listening summaries  
-- Engagement and habit consistency trends  
-- Session behavior and listening intensity  
-- Preference concentration and diversity  
-- Discovery versus repeat listening behavior  
-- Cross-platform comparison insights  
-
-The dashboard prioritizes narrative flow and interpretability over exhaustive filtering.
+The dashboard emphasizes narrative flow, visual hierarchy, and interpretability, allowing users to explore how listening behavior evolved over time and differed across platforms.
 
 ---
 
@@ -161,11 +192,17 @@ MusicPlatformInsights/
 │ ├── LoadAppleData.ipynb
 │ ├── AddAppleArtists.ipynb
 │ ├── EngagementKPIs.ipynb
-│ ├── ExportToPowerBI.ipynb
+│ ├── ExportToTableau.ipynb
 ├── data/
 │ ├── raw/
 │ ├── processed/
 │ └── kpis/
+├── images/
+│ ├── MusicWrapped.png
+│ ├── ListeningTime.png
+│ ├── SessionLength.png
+│ ├── TopArtists.png
+│ ├── TopTracks.png
 ├── dashboards/
 ├── docs/
 │ ├── canonical_schema.md
@@ -175,15 +212,8 @@ MusicPlatformInsights/
 
 ---
 
-## Planned Work
-
-- Finalize Tableau dashboard layout and storytelling flow  
-- Refine cross-platform comparison insights  
-- Add optional v2 Apple Music metadata enrichment  
-- Document KPI rationale for interview and portfolio use  
-
----
-
 ## Why This Project
 
-While centered on personal music data, this project mirrors real-world analytics problems such as multi-source data integration, behavioral modeling, KPI design, and insight communication. The focus is on transforming raw event data into meaningful, user-facing insights, reflecting how modern consumer products use analytics to understand and communicate user behavior.
+While centered on personal music data, this project mirrors real-world analytics problems such as multi-source data integration, behavioral modeling, KPI design, and insight communication.
+
+The focus is on transforming raw event data into meaningful, user-facing insights, reflecting how modern consumer products use analytics to understand and communicate user behavior.
