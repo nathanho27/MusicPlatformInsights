@@ -14,6 +14,9 @@ This project mirrors real-world analytics problems like multi-source data integr
 Preview of Dashboard here:
 [![Dashboard Preview](images/MusicWrapped.png)](https://public.tableau.com/app/profile/nathan.ho2158/viz/MusicWrapped/MusicWrapped)
 
+After completing that overview, I built a second Tableau dashboard focused specifically on listening behavior KPIs, designed to move beyond summary visuals and examine how listening actually happens. This view emphasizes engagement frequency, session structure, discovery behavior, and preference diversity over time
+	•	The published Tableau dashboard can be found [here](https://public.tableau.com/app/profile/nathan.ho2158/viz/ListeningBehaviorExtensionofMusicWrapped/Dashboard2)
+[![Listening Behavior Dashboard](images/ListeningBehavior.png)](https://public.tableau.com/app/profile/nathan.ho2158/viz/ListeningBehaviorExtensionofMusicWrapped/Dashboard2)
 ---
 
 ## Table of Contents
@@ -143,6 +146,17 @@ A similar concentration pattern appears at the track level. Post-switch listenin
 
 Together with artist concentration, this suggests a shift toward focused listening habits built around favorites.
 
+### 6. Artist Discovery Rate by Platform (2025)
+
+![Artist Discovery Rate](images/DiscoveryRate.png)
+
+This view compares the share of listening events that introduced a *new artist* on each platform. Spotify shows a substantially higher discovery rate, suggesting broader exploration behavior, while Apple Music listening skews more toward repeat engagement with familiar artists.
+
+### 7. Weekly Artist Diversity Over Time
+
+![Weekly Artist Diversity](images/WeeklyArtists.png)
+
+This chart tracks the number of unique artists listened to each week throughout 2025. The trend highlights periods of high exploration versus more concentrated listening phases, reinforcing the difference between discovery-heavy and replay-heavy behavior across platforms.
 ---
 
 ## Engagement KPIs
@@ -203,6 +217,9 @@ MusicPlatformInsights/
 │ ├── SessionLength.png
 │ ├── TopArtists.png
 │ ├── TopTracks.png
+│ ├── ListeningBehavior.png
+│ ├── WeeklyArtists.png
+│ ├── DiscoveryRate.png
 ├── dashboards/
 ├── docs/
 │ ├── canonical_schema.md
