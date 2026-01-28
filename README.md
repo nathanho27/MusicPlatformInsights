@@ -146,17 +146,22 @@ A similar concentration pattern appears at the track level. Post-switch listenin
 
 Together with artist concentration, this suggests a shift toward focused listening habits built around favorites.
 
-### 6. Artist Discovery Rate by Platform (2025)
+### 6. Cross-Platform Behavior Overview
+![](images/ListeningBehavior.png)
+This dashboard focuses on behavior-level KPIs derived from the normalized listening event data, shifting attention from individual songs or artists to how listening patterns form over time. It highlights changes in engagement intensity, session structure, discovery behavior, and preference concentration across platforms.
+
+### 7. Artist Discovery Rate by Platform (2025)
 
 ![Artist Discovery Rate](images/DiscoveryRate.png)
 
 This view compares the share of listening events that introduced a *new artist* on each platform. Spotify shows a substantially higher discovery rate, suggesting broader exploration behavior, while Apple Music listening skews more toward repeat engagement with familiar artists.
 
-### 7. Weekly Artist Diversity Over Time
+### 8. Weekly Artist Diversity Over Time
 
 ![Weekly Artist Diversity](images/WeeklyArtists.png)
 
 This chart tracks the number of unique artists listened to each week throughout 2025. The trend highlights periods of high exploration versus more concentrated listening phases, reinforcing the difference between discovery-heavy and replay-heavy behavior across platforms.
+
 ---
 
 ## Engagement KPIs
